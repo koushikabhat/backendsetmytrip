@@ -43,6 +43,10 @@ app.use(cors());
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 
+app.get('/',(req, res)=>{
+  res.send("hello from backend server welcome to setmytrip")
+})
+
 app.post('/generate-trip', async(req,res)=>{
     let tripplan = "";
     const  {destination, days, budget, members, userId} = req.body;
